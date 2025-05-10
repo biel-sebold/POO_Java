@@ -1,4 +1,7 @@
 package Exe07;
+
+import java.util.Scanner;
+
 /*
 O objetivo deste exercício é implementar um programa para calcular o valor de imposto de renda (IRPF) 
 a ser pago por uma pessoa. O cálculo do imposto de renda baseia-se no valor de salário recebido pela pessoa. 
@@ -44,5 +47,34 @@ num vetor. Ao final da digitação dos funcionários, exiba uma relação (lista
 salário e IRPF.
 */
 public class App7 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    
+        Funcionario[] funcionarios = new Funcionario[2];
+        
+        for (int i = 0; i < funcionarios.length; i++) {
+            Funcionario funcionariosAdd = new Funcionario();
+            
+            System.out.printf("\nInforme o nome do funcionário (%d): ", i+1);
+            funcionariosAdd.setNome(sc.next());
+            System.out.printf("Informe o salário do funcionário (%d): ", i+1);
+            funcionariosAdd.setSalario(sc.nextDouble());
+            
+            funcionarios[i] = funcionariosAdd;
+        }
+        
+        System.out.print("\n\n###RELAÇÃO###");
+        
+        for (int i = 0; i < funcionarios.length; i++) {
+            Funcionario func = funcionarios[i];
+            
+            System.out.printf("\n(%d) Funcionário: %s", i+1, func.getNome());
+            System.out.printf("\n(%d) Salário: R$%.2f", i+1, func.getSalario());
+            System.out.printf("\n(%d IRPF: R$%.2f\n", i+1, func.calcularIrpf());
+        }
+    }
+    
+    
+    
     
 }
