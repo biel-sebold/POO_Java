@@ -4,12 +4,23 @@ public class Retangulo {
     private double altura;
     private double comprimento;
     
+    /**
+     *  Estabelece que está sendo criado um retângulo em que a altura e comprimento são iguais à 0
+     * 
+     * @param altura Altura do retângulo
+     * @param comprimento Comprimento o retângulo
+     */
     public Retangulo(){
         this.altura = 0;
         this.comprimento = 0;
       
     }
     
+    /**
+     * 
+     * @param comp Comprimento do retângulo
+     * @param alt Altura do retângulo
+     */
     public Retangulo(double comp, double alt){
         this.altura = alt;
         this.comprimento = comp;
@@ -20,7 +31,7 @@ public class Retangulo {
         this.altura = altura;
         
         if (altura <= 0) {
-            throw new IllegalAccessError("A altura não pode ser igual ou menor a zero!!!");
+            throw new IllegalArgumentException("Valor incorreto para a altura: " + altura + "!!!");
         }
     }
 
@@ -34,14 +45,30 @@ public class Retangulo {
 
     public void setComprimento(double comprimento) {
         this.comprimento = comprimento;
+        
+        if (comprimento <= 0) {
+            throw new IllegalArgumentException("Valor incorreto para a altura: " + comprimento + "!!!");
+        }
     }
     
+    /**
+     * Calcula o perímetro do retângulo
+     * 
+     * @return perimetro Multiplicação por dois da multiplicação da altura pelo comprimento
+     */
     public double calcularPerimetro(){
-        return 0;
+        double perimetro = 2*(altura*comprimento);
+        return perimetro;
     }
     
-    public double calcularAreaa(){
-        return 0;
+    /**
+     * Calcula a área do retângulo
+     * 
+     * @return area Multiplicação da altura pelo comprimento    
+     */
+    public double calcularArea(){
+        double area = altura*comprimento;
+        return area;
     }
     
     

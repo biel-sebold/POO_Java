@@ -1,5 +1,7 @@
 package Exe08;
 
+import java.util.Scanner;
+
 /*
 A classe abaixo foi projetada para representar retângulos. Implemente esta classe, conforme descrito abaixo.
 a) O construtor Retangulo() deverá estabelecer que está sendo criado um retângulo em que a altura e comprimento
@@ -20,9 +22,32 @@ Dica: O perímetro de um retângulo é igual a soma de todos os seus lados.
 h) O método calcularArea() deverá calcular e retornar a área do retângulo
 i) Realizar a documentação Javadoc de sua classe Retangulo. Deve-se documentar pelo menos os métodos
 Construtores e os métodos calcularPerimetro() e calcularArea().
+
+
+Crie um programa que solicite as medidas de um retângulo ao usuário e apresente o perímetro e area deste retângulo.
+Para criar um retângulo, utilize o construtor com assinatura Retangulo().
+Crie uma classe AppQuestao2Ui para representar este programa. Nesta classe, crie um método main. Para solicitar as
+medidas ao usuário utilize a interface gráfica com JOptionPane.showInputDialog(). Para apresentar os dados em tela
+utilize JOptionPane.showMessageDialog().
 */
 
 public class App8 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.print("Informe a altura do retângulo: ");
+        double altura = sc.nextDouble();
+        System.out.print("\nInforme o comprimento do retângulo: ");
+        double comprimento = sc.nextDouble();
+        
+        
+        Retangulo criaRetangulo = new Retangulo(altura, comprimento);
+        
+        criaRetangulo.calcularPerimetro();
+        criaRetangulo.calcularArea();
+        
+        
+    }
     
     
 }
