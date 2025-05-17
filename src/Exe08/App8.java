@@ -23,12 +23,12 @@ h) O método calcularArea() deverá calcular e retornar a área do retângulo
 i) Realizar a documentação Javadoc de sua classe Retangulo. Deve-se documentar pelo menos os métodos
 Construtores e os métodos calcularPerimetro() e calcularArea().
 
+Crie um programa com o método main() (na mesma classe ou separado) que:
+- Solicite ao usuário, via terminal, os valores de altura e comprimento do retângulo;
+- Exiba no terminal a altura, comprimento, área e perímetro do retângulo;
 
-Crie um programa que solicite as medidas de um retângulo ao usuário e apresente o perímetro e area deste retângulo.
-Para criar um retângulo, utilize o construtor com assinatura Retangulo().
-Crie uma classe AppQuestao2Ui para representar este programa. Nesta classe, crie um método main. Para solicitar as
-medidas ao usuário utilize a interface gráfica com JOptionPane.showInputDialog(). Para apresentar os dados em tela
-utilize JOptionPane.showMessageDialog().
+
+
 */
 
 public class App8 {
@@ -41,10 +41,14 @@ public class App8 {
         double comprimento = sc.nextDouble();
         
         
-        Retangulo criaRetangulo = new Retangulo(altura, comprimento);
+        Retangulo ret = new Retangulo(altura, comprimento);
         
-        criaRetangulo.calcularPerimetro();
-        criaRetangulo.calcularArea();
+        System.out.println("\n\n### RESULTADO ###");
+        System.out.printf("Altura: %.1f", altura);
+        System.out.printf("\nComprimento: %.1f", comprimento);
+        System.out.printf("\nÁrea: %.1f", ret.calcularArea());
+        System.out.printf("\nPerímetro: %.1f", ret.calcularPerimetro());
+      
         
         
     }
